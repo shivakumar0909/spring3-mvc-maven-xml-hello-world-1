@@ -20,11 +20,11 @@ pipeline {
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "13.233.66.167:8081/"
+        NEXUS_URL = "47.128.76.190:8081"
         // Repository where we will upload the artifact
-        NEXUS_REPOSITORY = "ncodeit-helloworld"
+        NEXUS_REPOSITORY = "parajob-s"
         // Jenkins credential id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID = "nexus_credentials"
+        NEXUS_CREDENTIAL_ID = "nexus-server"
     }
     stages {
         stage("clone code") {
@@ -43,7 +43,7 @@ pipeline {
 				if (params.mvn_build) {
                     // If you are using Windows then you should use "bat" step
                     // Since unit testing is out of the scope we skip them
-                    sh '/usr/share/maven/bin/mvn -Dmaven.test.failure.ignore clean package'
+                    sh '$MVN_HOME/bin/mvn -Dmaven.test.failure.ignore clean package'
 					} else {
                                 echo "no build"
                             }
