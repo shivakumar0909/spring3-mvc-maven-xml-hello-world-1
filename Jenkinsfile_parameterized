@@ -31,7 +31,7 @@ pipeline {
                 script {
                     
 				    // Let's clone the source
-                    git branch: "${params.BRANCH}", url: 'https://github.com/shivakumar0909/spring3-mvc-maven-xml-hello-world-1.git';
+                    git branch: "master", url: 'https://github.com/shivakumar0909/spring3-mvc-maven-xml-hello-world-1.git';
                    
                 } 
             }
